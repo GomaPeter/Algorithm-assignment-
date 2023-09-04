@@ -5,11 +5,15 @@ function determainationSentenceStatus(sentence) {
     let vowels = 0;
     // Read the sentence character by character.
     for (let i = 0; i < sentence.length; i++) {
-        // increment the length variable. 
+        const currentchar = sentence[i];
+
+
+        // increment the length variable.
+        if (currentchar !== ' ') 
         length++;
     
         //if the character is a space, increment the words variable.
-        if (sentence[i] === ' ') {
+        if (currentchar === ' ' || i === sentence.length - 1) {
             words++;
         }
     
@@ -27,6 +31,6 @@ function determainationSentenceStatus(sentence) {
     };
 }
 
-const sentence = "This is a sentence.";
+const sentence = "This is a simple sentence";
 const results = determainationSentenceStatus(sentence);
 console.log(results);
